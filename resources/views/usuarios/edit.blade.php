@@ -17,8 +17,13 @@
       <input id="email" name="email" type="text" class="form-control" tabindex="3" value="{{$usuario->email}}">
     </div>
     <div class="mb-3">
-      <label for="" class="form-label">Tipo de Usuario</label>
-      <input id="tipouser_id" name="tipouser_id" type="text" class="form-control" tabindex="3" value="{{$usuario->tipouser_id}}">
+      <label for="" class="form-label">Tipo de Usuario</label><br>
+      <select name="tipouser_id" id="tipouser_id">
+        @foreach($tiposdeusuarios as $tipouser)
+          <option value="{{ $tipouser->id }}">{{ $tipouser->descripcion }}</option>
+        @endforeach
+      </select>
+      <!-- <input id="tipouser_id" name="tipouser_id" type="text" class="form-control" tabindex="3" value="{{$usuario->tipouser_id}}"> -->
     </div>
     <div class="mb-3">
       <label for="" class="form-label">Documento</label>
@@ -34,8 +39,13 @@
     </div>
     <div class="mb-3">
       {{-- Arreglar --}}
-      <label for="" class="form-label">Obra social</label>  
-      <input id="obrasocial_id" name="obrasocial_id" type="text" class="form-control" tabindex="3" value="{{$usuario->obrasocial_id}}">
+      <label for="" class="form-label">Obra social</label><br>
+      <select name="obrasocial_id" id="obrasocial_id">
+        @foreach($obrasociales as $obrasocial)
+          <option value="{{ $obrasocial->id }}">{{ $obrasocial->descripcion }}</option>
+        @endforeach
+      </select>
+      <!-- <input id="obrasocial_id" name="obrasocial_id" type="text" class="form-control" tabindex="3" value="{{$usuario->obrasocial_id}}"> -->
     </div>
     <div class="mb-3">
       <label for="" class="form-label">Prepaga</label>

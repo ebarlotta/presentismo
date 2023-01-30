@@ -28,8 +28,12 @@
     <input id="cuit" name="cuit" type="text" class="form-control" tabindex="3" value="{{$empresa->cuit}}">
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Tipo de Iva</label>
-    <input id="tipoiva_id" name="tipoiva_id" type="text" class="form-control" tabindex="3" value="{{$empresa->tipoiva_id}}">
+    <label for="" class="form-label">Tipo de Iva</label><br>
+      <select name="tipoiva_id" id="tipoiva_id">
+        @foreach($tiposdeiva as $tipodeiva)
+          <option value="{{ $tipodeiva->id }}">{{ $tipodeiva->descripcion }}</option>
+        @endforeach
+      </select>
   </div>
   <div class="mb-3">
     <label for="" class="form-label">Contacto</label>

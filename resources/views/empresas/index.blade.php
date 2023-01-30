@@ -33,7 +33,11 @@
         <td>{{$empresa->telefono}}</td>
         <td>{{$empresa->movil}}</td>
         <td>{{$empresa->cuit}}</td>
-        <td>{{$empresa->tipoiva_id}}</td>
+        @if($empresa->tipodeiva->descripcion)
+          <td>{{$empresa->tipodeiva->descripcion}}</td>
+        @else
+          <td>-</td>
+        @endif
         <td>{{$empresa->contacto}}</td>
         <td>{{$empresa->ubicacion}}</td>
         <td>{{$empresa->localidad_id}}</td>

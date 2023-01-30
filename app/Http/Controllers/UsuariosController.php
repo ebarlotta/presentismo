@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use App\Models\tiposuser as User;
 use App\Models\User;
+use App\Models\tiposuser;
+use App\Models\Obrasocials;
 use Illuminate\Support\Facades\Hash;
 
 class UsuariosController extends Controller
@@ -29,7 +31,12 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        return view('/usuarios/create');
+        $tiposdeusuarios = tiposuser::all();
+        $obrasociales = Obrasocials::all();
+
+        return view('/usuarios/create')
+            ->with('tiposdeusuarios',$tiposdeusuarios)
+            ->with('obrasociales',$obrasociales);;
     }
 
     /**
@@ -77,8 +84,14 @@ class UsuariosController extends Controller
      */
     public function edit($id)
     {
+        $tiposdeusuarios = tiposuser::all();
+        $obrasociales = Obrasocials::all();
+
          $usuario = User::find($id);
-         return view('/usuarios/edit')->with('usuario',$usuario);
+         return view('/usuarios/edit')
+            ->with('usuario',$usuario)
+            ->with('tiposdeusuarios',$tiposdeusuarios)
+            ->with('obrasociales',$obrasociales);
     }
 
     /**

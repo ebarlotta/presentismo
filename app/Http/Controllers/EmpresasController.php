@@ -6,6 +6,8 @@ use App\Models\empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\tipoiva;
+
 class EmpresasController extends Controller
 {
     /**
@@ -27,7 +29,9 @@ class EmpresasController extends Controller
      */
     public function create()
     {
-        return view('/empresas/create');
+        $tiposdeiva = tipoiva::all();
+        return view('/empresas/create')
+            ->with('tiposdeiva',$tiposdeiva);
     }
 
     /**
@@ -73,8 +77,12 @@ class EmpresasController extends Controller
      */
     public function edit($id)
     {
+        $tiposdeiva = tipoiva::all();
+
          $empresa = empresa::find($id);
-         return view('/empresas/edit')->with('empresa',$empresa);
+         return view('/empresas/edit')
+            ->with('empresa',$empresa)
+            ->with('tiposdeiva',$tiposdeiva);
     }
 
     /**

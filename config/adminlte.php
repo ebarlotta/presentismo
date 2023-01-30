@@ -331,7 +331,7 @@ return [
             ],
             [
                 'text' => 'Tipos de Usuarios',
-                'url'  => 'usuarios',
+                'url'  => 'tiposusuarios',
                 'icon' => 'fas fa-fw fa-user',
             ],
             [
@@ -352,6 +352,11 @@ return [
             [
                 'text' => 'Obras',
                 'url'  => 'obras',
+                'icon' => 'fa-thin fa-sitemap',
+            ],
+            [
+                'text' => 'Obras Sociales',
+                'url'  => 'obrassociales',
                 'icon' => 'fa-thin fa-sitemap',
             ],
             [

@@ -58,4 +58,13 @@ class User extends Authenticatable // implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function tipodeusuario()
+    {
+        return $this->hasOne(tiposuser::class, 'id', 'tipouser_id');
+    }
+    public function obrasocial()
+    {
+        return $this->hasOne(Obrasocials::class, 'id', 'obrasocial_id');
+    }
 }

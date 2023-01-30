@@ -31,11 +31,13 @@
     <tr>
         <td>{{$usuario->name}}</td>
         <td>{{$usuario->email}}</td>
-        <td>{{$usuario->tipouser_id}}</td>
+        <!-- <td>{{$usuario->tipouser_id}}</td> -->
+        <td>{{$usuario->tipodeusuario->descripcion}}</td>
         <td>{{$usuario->documento}}</td>
         <td>{{$usuario->telefono}}</td>
         <td>{{$usuario->nroemergencia}}</td>
-        <td>{{$usuario->obrasocial_id}}</td>
+        <td>{{$usuario->obrasocial->descripcion}}</td>
+        <!-- <td>{{$usuario->obrasocial_id}}</td> -->
         <td>{{$usuario->prepaga}}</td>
         <td>
          <form action="{{ route('usuarios.destroy',$usuario->id) }}" method="POST">

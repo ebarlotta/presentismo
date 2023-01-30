@@ -38,6 +38,8 @@ Route::middleware([
     Route::resource('novedades','App\Http\Controllers\NovedadesController');
     Route::resource('acciones','App\Http\Controllers\AccionesController');
     Route::resource('empresas','App\Http\Controllers\EmpresasController');
+    Route::resource('tiposusuarios','App\Http\Controllers\TiposusuariosController');
+    Route::resource('obrassociales','App\Http\Controllers\ObrasSocialesController');
 
 });
 
