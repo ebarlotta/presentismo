@@ -34,7 +34,7 @@
 
     {{-- <div class="logo" style="height: 25%;">
         <img src="{{ asset('images/logoPresentismoMedio.png') }}" alt="Logo Terra Organic" class="logo-img">
-        
+
     </div>
     <button type="button" class="btn btn-warning">Warning</button>
     <input class="btn btn-primary" type="reset" value="Reset"> --}}
@@ -44,7 +44,7 @@
 </head>
 <body>
     @include('navbar')
-   
+
 
     <div class="container__cards">
 
@@ -54,7 +54,7 @@
                 <div class="img__back"></div>
             </div>
             <div class="description">
-                <h2>Miguel de Tucuman</h2>
+                <h2>Primer Nombre</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
                 <input type="button" value="Leer Más">
             </div>
@@ -66,7 +66,7 @@
                 <div class="img__back"></div>
             </div>
             <div class="description">
-                <h2>Paula Torres de Ortiz</h2>
+                <h2>Segundo Nombre</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
                 <input type="button" value="Leer Más">
             </div>
@@ -78,13 +78,13 @@
                 <div class="img__back"></div>
             </div>
             <div class="description">
-                <h2>Raul Nicanor Ortiz</h2>
+                <h2>Terser Nombre</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
                 <input type="button" value="Leer Más">
             </div>
         </div>
 
     </div>
-    
+
 </body>
 </html>
