@@ -19,8 +19,17 @@
     <div class="mb-3">
       <label for="" class="form-label">Tipo de Usuario</label><br>
       <select name="tipouser_id" id="tipouser_id">
+        @isset($tipouser->id)
+          <option value="1" selected>Ninguna</option>
+        @else
+          <option value="1">Ninguna</option>
+        @endisset
         @foreach($tiposdeusuarios as $tipouser)
-          <option value="{{ $tipouser->id }}">{{ $tipouser->descripcion }}</option>
+          @if($usuario->tipouser_id == $tipouser->id)
+            <option value="{{ $tipouser->id }}" selected>{{ $tipouser->descripcion }}</option>
+          @else
+            <option value="{{ $tipouser->id }}">{{ $tipouser->descripcion }}</option>
+          @endif
         @endforeach
       </select>
       <!-- <input id="tipouser_id" name="tipouser_id" type="text" class="form-control" tabindex="3" value="{{$usuario->tipouser_id}}"> -->
@@ -37,13 +46,25 @@
       <label for="" class="form-label">Número de emergencia</label>
       <input id="nroemergencia" name="nroemergencia" type="text" class="form-control" tabindex="3" value="{{$usuario->nroemergencia}}">
     </div>
+    {{$usuario}}
     <div class="mb-3">
       {{-- Arreglar --}}
       <label for="" class="form-label">Obra social</label><br>
       <select name="obrasocial_id" id="obrasocial_id">
+        @isset($obrasocial->id)
+          <option value="1">Ninguna</option>
+        @else
+          <option value="1" selected>Ninguna</option>
+        @endisset
+        
         @foreach($obrasociales as $obrasocial)
-          <option value="{{ $obrasocial->id }}">{{ $obrasocial->descripcion }}</option>
+          @if($usuario->obrasocial_id == $obrasocial->id)
+            <option value="{{ $obrasocial->id }}" selected>{{ $obrasocial->descripcion }}</option>
+          @else
+            <option value="{{ $obrasocial->id }}">{{ $obrasocial->descripcion }}</option>
+          @endif
         @endforeach
+
       </select>
       <!-- <input id="obrasocial_id" name="obrasocial_id" type="text" class="form-control" tabindex="3" value="{{$usuario->obrasocial_id}}"> -->
     </div>

@@ -4,11 +4,7 @@
   <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @endsection
 
-
 @section('content')
-<!-- <div class="shadow-lg p-3 mb-5 bg-white rounded"><h3>Contenido de INDEX</h3></div> -->
-<a href="{{ route('acciones.create') }}" class="btn btn-primary">CREAR</a>
-
 
 <table id="acciones" class="table table-striped table-borderd shadow-lg mt-4" style="width: 100%">
   <thead class="bg-primary text-white">
@@ -17,30 +13,30 @@
       <th scope="col">Obra</th>
       <th scope="col">Empresa</th>
       <th scope="col">Tarea</th>
-      <th scope="col">Acance</th>
       <th scope="col">Novedad</th>
       <th scope="col">Foto</th>
+      <th scope="col">Avance</th>
       <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
     @foreach ($acciones as $accion)
     <tr>
-        <td>{{$accion->actividad_id}}</td>
-        <td>{{$accion->obra_id}}</td>
-        <td>{{$accion->empresa_id}}</td>
-        <td>{{$accion->tarea_id}}</td>
-        <td>{{$accion->novedad_id}}</td>
-        <td>{{$accion->avance}}</td>
-        <td>{{$accion->fotourl}}</td>
-        <td>
-         <form action="{{ route('acciones.destroy',$accion->id) }}" method="POST">
-          <a href="acciones/{{$accion->id}}/edit" class="btn btn-info">Editar</a>
-              @csrf
-              @method('DELETE')
-          <button type="submit" class="btn btn-danger">Delete</button>
-         </form>
-        </td>
+      <td>{{$accion->actividad_row->descripcion}}</td>
+      <td>{{$accion->obra_row->nombre}}</td>
+      <td>{{$accion->empresa_row->nombre}}</td>
+      <td>{{$accion->tarea_id}}</td>
+      <td>{{$accion->novedad_row->descripcion}}</td>
+      <td>{{$accion->fotourl}}</td>
+      <td>{{$accion->avance}}</td>
+      <td>
+        <form action="{{ route('acciones.destroy',$accion->id) }}" method="POST">
+        <a href="acciones/{{$accion->id}}/edit" class="btn btn-info">Editar</a>
+            @csrf
+            @method('DELETE')
+        <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </td>
     </tr>
     @endforeach
   </tbody>

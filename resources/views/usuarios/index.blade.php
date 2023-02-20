@@ -4,11 +4,7 @@
 <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @endsection
 
-
 @section('content')
-<!-- <div class="shadow-lg p-3 mb-5 bg-white rounded"><h3>Contenido de INDEX</h3></div> -->
-<a href="{{ route('usuarios.create') }}" class="btn btn-primary">CREAR</a>
-
 
 <table id="usuarios" class="table table-striped table-borderd shadow-lg mt-4" style="width: 100%">
   <thead class="bg-primary text-white">
@@ -32,12 +28,20 @@
         <td>{{$usuario->name}}</td>
         <td>{{$usuario->email}}</td>
         <!-- <td>{{$usuario->tipouser_id}}</td> -->
-        <td>{{$usuario->tipodeusuario->descripcion}}</td>
+        
+        @isset($usuario->tipodeusuario->descripcion)
+          <td>{{$usuario->tipodeusuario->descripcion}}</td>
+        @else
+          <td>-</td>
+        @endisset
         <td>{{$usuario->documento}}</td>
         <td>{{$usuario->telefono}}</td>
         <td>{{$usuario->nroemergencia}}</td>
-        <td>{{$usuario->obrasocial->descripcion}}</td>
-        <!-- <td>{{$usuario->obrasocial_id}}</td> -->
+        @isset($usuario->obrasocial->descripcion)
+          <td>{{ $usuario->obrasocial->descripcion}}</td>
+        @else
+          <td>-</td>
+        @endisset
         <td>{{$usuario->prepaga}}</td>
         <td>
          <form action="{{ route('usuarios.destroy',$usuario->id) }}" method="POST">

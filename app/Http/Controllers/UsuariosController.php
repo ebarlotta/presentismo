@@ -52,11 +52,11 @@ class UsuariosController extends Controller
         $hashed = Hash::make('12345678'); // save $hashed value
         $usuarios->password = $hashed;
         $usuarios->email = $request->get('email');
-        $usuarios->tipouser_id = $request->get('tipouser_id');
+        $usuarios->tipouser_id = 1; // $request->get('tipouser_id');
         $usuarios->documento = $request->get('documento');
         $usuarios->telefono = $request->get('telefono');
         $usuarios->nroemergencia = $request->get('nroemergencia');
-        $usuarios->obrasocial_id = $request->get('obrasocial_id');
+        $usuarios->obrasocial_id = 1; //$request->get('obrasocial_id');
         $usuarios->prepaga = $request->get('prepaga');
 
         // $usuarios->empresa_id = Auth::user()->empresa_id;

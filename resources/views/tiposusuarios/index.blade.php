@@ -4,11 +4,7 @@
   <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @endsection
 
-
 @section('content')
-<!-- <div class="shadow-lg p-3 mb-5 bg-white rounded"><h3>Contenido de INDEX</h3></div> -->
-<a href="{{ route('tiposusuarios.create') }}" class="btn btn-primary">CREAR</a>
-
 
 <table id="tiposusuarios" class="table table-striped table-borderd shadow-lg mt-4" style="width: 100%">
   <thead class="bg-primary text-white">

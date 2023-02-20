@@ -3,7 +3,10 @@
 @section('title', env('APP_NAME') )
 
 @section('content_header')
-    <h1>Página Principal</h1>
+<div class="d-flex justify-content-between container">
+    <h1>Listado de Actividades</h1>
+    <a href="{{ route('actividades.create') }}" class="btn btn-primary">CREAR</a>
+</div>
 @stop
 
 @section('content')

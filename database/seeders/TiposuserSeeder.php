@@ -15,8 +15,11 @@ class TiposuserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tiposusers')->insert(['descripcion' => 'Dueño ']);
+        DB::table('tiposusers')->insert(['descripcion' => 'Ninguno']);
         DB::table('tiposusers')->insert(['descripcion' => 'Usuario Común']);
         DB::table('tiposusers')->insert(['descripcion' => 'Visitante']);
+        DB::table('tiposusers')->insert(['descripcion' => 'Operario']);
+        DB::table('tiposusers')->insert(['descripcion' => 'Administrador']);
+        DB::table('tiposusers')->insert(['descripcion' => 'Dueño']);
     }
 }

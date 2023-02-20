@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Acciones;
+use App\Models\Actividad;
+use App\Models\empresa;
+use App\Models\Novedad;
+use App\Models\Obra;
 use Illuminate\Support\Facades\Auth;
 
 class AccionesController extends Controller
@@ -27,7 +31,17 @@ class AccionesController extends Controller
      */
     public function create()
     {
-        return view('/acciones/create');
+        $empresas = empresa::all();
+        $obras = Obra::all();
+        $actividades = Actividad::all();
+        $novedades = Novedad::all();
+
+        return view('/acciones/create')
+            ->with('empresas',$empresas)
+            ->with('actividades',$actividades)
+            ->with('novedades',$novedades)
+            ->with('obras',$obras);
+
     }
 
     /**
@@ -42,10 +56,10 @@ class AccionesController extends Controller
         $acciones->actividad_id = $request->get('actividad_id');
         $acciones->obra_id = $request->get('obra_id');
         $acciones->empresa_id = $request->get('empresa_id');
-        $acciones->tarea_id = $request->get('tarea_id');
-        $acciones->novedad_id = $request->get('novedad_id');
+        // $acciones->tarea_id = $request->get('tarea_id');
+        $acciones->novedad_id = 1; //$request->get('novedad_id');
         $acciones->avance = $request->get('avance');
-        $acciones->fotourl = $request->get('fotourl');
+        $acciones->fotourl = 1; // $request->get('fotourl');
         // $acciones->empresa_id = Auth::user()->empresa_id;
         $acciones->save();
 
@@ -71,8 +85,19 @@ class AccionesController extends Controller
      */
     public function edit($id)
     {
-         $accion = Acciones::find($id);
-         return view('/acciones/edit')->with('accion',$accion);
+        $accion = Acciones::find($id);
+        $actividades = Actividad::all();
+        $obras = Obra::all();
+        $empresas = empresa::all();
+        $novedades = Novedad::all();
+
+        // dd($actividades);
+        return view('/acciones/edit')
+            ->with('accion',$accion)
+            ->with('actividades',$actividades)
+            ->with('obras',$obras)
+            ->with('empresas',$empresas)
+            ->with('novedades',$novedades);
     }
 
     /**
@@ -88,7 +113,8 @@ class AccionesController extends Controller
         $accion->actividad_id = $request->get('actividad_id');
         $accion->obra_id = $request->get('obra_id');
         $accion->empresa_id = $request->get('empresa_id');
-        $accion->tarea_id = $request->get('tarea_id');
+        //$accion->tarea_id = 1; //$request->get('tarea_id');
+        //$accion->tarea_id = 1; //$request->get('tarea_id');
         $accion->novedad_id = $request->get('novedad_id');
         $accion->avance = $request->get('avance');
         $accion->fotourl = $request->get('fotourl');

@@ -4,9 +4,8 @@
 <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @endsection
 
-
 @section('content')
-<!-- <div class="shadow-lg p-3 mb-5 bg-white rounded"><h3>Contenido de INDEX</h3></div> -->
+
 <a href="{{ route('socios.create') }}" class="btn btn-primary">CREAR</a>
 
 

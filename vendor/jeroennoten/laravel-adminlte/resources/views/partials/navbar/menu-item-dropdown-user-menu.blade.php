@@ -26,6 +26,7 @@
             {{ Auth::user()->name }}
         </span>
     </a>
+    
 
     {{-- User menu dropdown --}}
     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
