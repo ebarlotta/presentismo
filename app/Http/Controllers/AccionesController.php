@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Acciones;
 use App\Models\Actividad;
+use App\Models\Asistencia;
 use App\Models\empresa;
 use App\Models\Novedad;
 use App\Models\Obra;
@@ -12,6 +13,17 @@ use Illuminate\Support\Facades\Auth;
 
 class AccionesController extends Controller
 {
+    public function __invoke(Request $request)
+    {
+        $a = substr(url()->current(),0,-8); // quita el final
+        $a = strstr($a,"acciones",false);   // quita el principio y queda acciones/$id
+        $a = substr($a,9);                  // quita acciones/ y queda solo el $id
+        
+        $accion = Acciones::find($a);
+        return view('/acciones/detalle')
+            ->with('accion',$accion);
+    }
+
     /**
      * Display a listing of the resource. (Mostrar una lista del recurso.)
      *
@@ -72,9 +84,13 @@ class AccionesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function detalleshow($id)
     {
-        //
+        $accion = Acciones::find($id);
+        $accion = Asistencia::where('acciones_id',$id)->get();
+        // dd($accion);
+        return view('/acciones/detalle')
+            ->with('acciones',$accion);
     }
 
     /**

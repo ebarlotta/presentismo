@@ -17,10 +17,10 @@ class ComposerStaticInit7408f27954c7cbcdcadc8c824e5825d9
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
@@ -34,8 +34,8 @@ class ComposerStaticInit7408f27954c7cbcdcadc8c824e5825d9
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -596,6 +596,7 @@ class ComposerStaticInit7408f27954c7cbcdcadc8c824e5825d9
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Acciones' => __DIR__ . '/../..' . '/app/Models/Acciones.php',
         'App\\Models\\Actividad' => __DIR__ . '/../..' . '/app/Models/Actividad.php',
+        'App\\Models\\Asistencia' => __DIR__ . '/../..' . '/app/Models/Asistencia.php',
         'App\\Models\\Novedad' => __DIR__ . '/../..' . '/app/Models/Novedad.php',
         'App\\Models\\Obra' => __DIR__ . '/../..' . '/app/Models/Obra.php',
         'App\\Models\\Obrasocials' => __DIR__ . '/../..' . '/app/Models/Obrasocials.php',
@@ -798,6 +799,7 @@ class ComposerStaticInit7408f27954c7cbcdcadc8c824e5825d9
         'DASPRiD\\Enum\\NullValue' => __DIR__ . '/..' . '/dasprid/enum/src/NullValue.php',
         'Database\\Factories\\AccionesFactory' => __DIR__ . '/../..' . '/database/factories/AccionesFactory.php',
         'Database\\Factories\\ActividadFactory' => __DIR__ . '/../..' . '/database/factories/ActividadFactory.php',
+        'Database\\Factories\\AsistenciaFactory' => __DIR__ . '/../..' . '/database/factories/AsistenciaFactory.php',
         'Database\\Factories\\EmpresaFactory' => __DIR__ . '/../..' . '/database/factories/EmpresaFactory.php',
         'Database\\Factories\\NovedadFactory' => __DIR__ . '/../..' . '/database/factories/NovedadFactory.php',
         'Database\\Factories\\ObraFactory' => __DIR__ . '/../..' . '/database/factories/ObraFactory.php',

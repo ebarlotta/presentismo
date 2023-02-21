@@ -439,7 +439,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('img/banner01.jpg') }} " class="d-block w-100" style="height: 250px;" alt="...">
+                    <img src="{{ asset('img/banner01.jpg') }} " class="d-block w-100" style="height: 150px;" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>

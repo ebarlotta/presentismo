@@ -439,7 +439,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('img/banner01.jpg') }} " class="d-block w-100" style="height: 250px;" alt="...">
+                    <img src="{{ asset('img/banner01.jpg') }} " class="d-block w-100" style="height: 150px;" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 style="text-align: center">Primer Banner</h5>
                         <p style="text-align: center">Some representative placeholder content for the first slide.</p>
@@ -504,7 +504,7 @@
 
         <div class="card mb-6" style="max-width: 100%;">
             <div class="row g-0">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <img src="img/foto 04.jpg" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-6">

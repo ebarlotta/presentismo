@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\AccionesController;
+use App\Http\Controllers\AsistenciaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,10 +38,16 @@ Route::middleware([
     Route::resource('obras','App\Http\Controllers\ObrasController');
     Route::resource('actividades','App\Http\Controllers\ActividadesController');
     Route::resource('novedades','App\Http\Controllers\NovedadesController');
-    Route::resource('acciones','App\Http\Controllers\AccionesController');
     Route::resource('empresas','App\Http\Controllers\EmpresasController');
     Route::resource('tiposusuarios','App\Http\Controllers\TiposusuariosController');
     Route::resource('obrassociales','App\Http\Controllers\ObrasSocialesController');
+    Route::resource('asistencia','App\Http\Controllers\AsistenciaController');
+    Route::get('asistencia/{id}/detalle', [AsistenciaController::class,'validarasistencia']);
+    Route::post('asistencia/{id}/agregaraccion',[AsistenciaController::class,'agregaraccion'])->name('agregaraccion');
+    Route::get('asistencia/addactividad', [AsistenciaController::class,'addactividad']);
+
+    Route::resource('acciones','App\Http\Controllers\AccionesController');
+    Route::get('/acciones/{id}/detalle',[AccionesController::class,'detalleshow']);
 
 });
 

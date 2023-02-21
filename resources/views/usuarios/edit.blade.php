@@ -46,7 +46,7 @@
       <label for="" class="form-label">Número de emergencia</label>
       <input id="nroemergencia" name="nroemergencia" type="text" class="form-control" tabindex="3" value="{{$usuario->nroemergencia}}">
     </div>
-    {{$usuario}}
+
     <div class="mb-3">
       {{-- Arreglar --}}
       <label for="" class="form-label">Obra social</label><br>

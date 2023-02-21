@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Presentismo',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -319,6 +319,16 @@ return [
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
+            [
+                'text' => 'Asistencia',
+                'url'  => 'asistencia',
+                'icon' => 'fa-thin fa-sitemap',
+            ],
+            [
+                'text' => 'Validar Asistencia',
+                'url'  => 'asistencia/show',
+                'icon' => 'fa-thin fa-sitemap',
+            ],
             [
                 'text' => 'Acciones',
                 'url'  => 'acciones',

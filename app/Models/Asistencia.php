@@ -5,14 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Acciones extends Model
+class Asistencia extends Model
 {
     use HasFactory;
-
-    public function actividad_row()
-    {
-        return $this->hasOne(Actividad::class, 'id', 'actividad_id');
-    }
 
     public function obra_row()
     {
@@ -24,9 +19,8 @@ class Acciones extends Model
         return $this->hasOne(empresa::class, 'id', 'empresa_id');
     }
 
-    public function novedad_row()
+    public function usuario_row()
     {
-        return $this->hasOne(Novedad::class, 'id', 'novedad_id');
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
-    
 }

@@ -44,12 +44,12 @@
         @endisset
         <td>{{$usuario->prepaga}}</td>
         <td>
-         <form action="{{ route('usuarios.destroy',$usuario->id) }}" method="POST">
-          <a href="usuarios/{{$usuario->id}}/edit" class="btn btn-info">Editar</a>
+        <a href="usuarios/{{$usuario->id}}/edit" class="btn btn-info">Editar</a>
+        <form action="{{ route('usuarios.destroy',$usuario->id) }}" method="POST">
               @csrf
               @method('DELETE')
           <button type="submit" class="btn btn-danger">Delete</button>
-         </form>
+        </form>
         </td>
     </tr>
     @endforeach

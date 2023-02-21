@@ -9,26 +9,24 @@
 <table id="acciones" class="table table-striped table-borderd shadow-lg mt-4" style="width: 100%">
   <thead class="bg-primary text-white">
     <tr>
-      <th scope="col">Actividad</th>
-      <th scope="col">Obra</th>
-      <th scope="col">Empresa</th>
-      <th scope="col">Tarea</th>
-      <th scope="col">Novedad</th>
-      <th scope="col">Foto</th>
-      <th scope="col">Avance</th>
-      <th scope="col">Acciones</th>
+      <th scope="col-1">Entrada</th>
+      <th scope="col-1">Salida</th>
+      <th scope="col-1">Horas Trabajadas</th>
+      <th scope="col-1">Usuario</th>
+      <th scope="col-1">Obra</th>
+      <th scope="col-4">Acciones</th>
     </tr>
   </thead>
   <tbody>
     @foreach ($acciones as $accion)
     <tr>
-      <td>{{$accion->actividad_row->descripcion}}</td>
+
+      <td>{{$accion->entrada}}</td>
+      <td>{{$accion->salida}}</td>
+      <td>8 horas</td> 
+      
+      <td>{{$accion->usuario_row->name}}</td>
       <td>{{$accion->obra_row->nombre}}</td>
-      <td>{{$accion->empresa_row->nombre}}</td>
-      <td>{{$accion->tarea_id}}</td>
-      <td>{{$accion->novedad_row->descripcion}}</td>
-      <td>{{$accion->fotourl}}</td>
-      <td>{{$accion->avance}}</td>
       <td>
         <a href="acciones/{{$accion->id}}/edit" class="btn btn-info">Editar</a>
         <form action="{{ route('acciones.destroy',$accion->id) }}" method="POST">
